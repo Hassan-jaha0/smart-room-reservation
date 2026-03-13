@@ -99,4 +99,4 @@ Pour pusher ce projet sur votre GitHub :
 
 ---
 
-*Développé avec ❤️ pour une gestion d'espace plus intelligente.*
+*Développé par  Hassan Jaha pour une gestion d'espace plus intelligente.*
