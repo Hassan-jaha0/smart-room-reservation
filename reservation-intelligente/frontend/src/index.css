@@ -1,0 +1,196 @@
+@import "tailwindcss";
+
+@layer utilities {
+  .animate-in {
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-up {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes slide-in-bottom {
+    from {
+      transform: translateY(10px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoom-in-95 {
+    from {
+      transform: scale(0.95);
+      opacity: 0;
+    }
+
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  .fade-in {
+    animation-name: fade-in;
+  }
+
+  .slide-up {
+    animation-name: slide-up;
+  }
+
+  .slide-in-bottom {
+    animation-name: slide-in-bottom;
+  }
+
+  .zoom-in-95 {
+    animation-name: zoom-in-95;
+  }
+
+  /* Premium hover effects */
+  .hover-lift {
+    transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+  }
+
+  /* ── Global professional background ── */
+  .app-bg {
+    background-color: #eef2ff;
+    background-image:
+      url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80&auto=format');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+  }
+
+  .app-bg::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(238, 242, 255, 0.88);
+    backdrop-filter: blur(2px);
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .app-bg>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Auth hero overlay (stronger on login) */
+  .auth-hero-overlay {
+    position: relative;
+  }
+
+  .auth-hero-overlay::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.82) 0%, rgba(99, 102, 241, 0.7) 50%, rgba(129, 140, 248, 0.55) 100%);
+    border-radius: 1.5rem;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  .auth-hero-overlay>* {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Glassmorphism card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow:
+      0 25px 50px -12px rgba(0, 0, 0, 0.12),
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  }
+
+  /* Sidebar glass */
+  .sidebar-glass {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 8px 32px rgba(99, 102, 241, 0.08);
+  }
+
+  /* Content panel glass */
+  .content-glass {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow:
+      0 20px 40px rgba(99, 102, 241, 0.06),
+      0 1px 3px rgba(0, 0, 0, 0.04);
+  }
+
+  /* Floating feature cards */
+  .feature-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .feature-card:nth-child(2) {
+    animation-delay: 0.5s;
+  }
+
+  .feature-card:nth-child(3) {
+    animation-delay: 1s;
+  }
+
+  /* Header glass bar */
+  .header-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 20px rgba(99, 102, 241, 0.06);
+  }
+}
